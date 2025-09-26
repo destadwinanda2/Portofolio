@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Desta Dwinanda — Aeronautical Engineer</title>
+    <meta
+      name="description"
+      content="Portfolio of Desta Dwinanda — final‑year Aeronautical Engineering student focusing on UAV design, aerostructures, and composite materials."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #3d639c;
+        --panel: #1b1812;
+        --soft: #036be2;
+        --txt: #e8eef5;
+        --muted: #ffffff;
+        --pri: #4da3ff;
+        --accent: #67e8f9;
+        --ring: rgba(77, 163, 255, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--txt);
+      }
+      a {
+        color: var(--pri);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .container {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 28px 20px 80px;
+      }
+      header {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        background: linear-gradient(
+          180deg,
+          var(--bg),
+          rgba(11, 13, 16, 0.75) 55%,
+          transparent
+        );
+        backdrop-filter: blur(6px);
+        padding: 16px 0;
+        z-index: 10;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--pri), var(--accent));
+        display: grid;
+        place-items: center;
+        color: #0b0d10;
+        font-weight: 800;
+      }
+      nav a {
+        margin-left: 18px;
+        color: var(--muted);
+      }
+      nav a.active,
+      nav a:hover {
+        color: var(--txt);
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        margin-top: 16px;
+        align-items: center;
+      }
+      .card {
+        background: linear-gradient(180deg, var(--panel), var(--soft));
+        border: 1px solid #1f2630;
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #0f1318;
+        border: 1px solid #1f2630;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 1.15;
+        margin: 14px 0;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .btns {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 12px;
+        padding: 10px 14px;
+        border: 1px solid #2a3340;
+        background: #0f1318;
+        color: var(--txt);
+        box-shadow: 0 0 0 0 var(--ring);
+        transition: box-shadow 0.2s, transform 0.05s;
+      }
+      .btn.primary {
+        background: linear-gradient(135deg, var(--pri), #2dd4bf);
+        border: 0;
+        color: #0b0d10;
+        font-weight: 700;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .grid {
+        display: grid;
+        gap: 18px;
+      }
+      .grid.cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      section {
+        margin-top: 34px;
+      }
+      section h2 {
+        margin: 0 0 14px;
+        font-size: 22px;
+      }
+      .kvs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .kv {
+        background: #0f1318;
+        border: 1px solid #222b36;
+        border-radius: 12px;
+        padding: 12px;
+      }
+      .kv .big {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .kv .sub {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .tag {
+        display: inline-block;
+        padding: 6px 10px;
+        border: 1px solid #2a3340;
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 12px;
+        margin: 4px 6px 0 0;
+      }
+      .item {
+        display: grid;
+        gap: 4px;
+      }
+      .item .meta {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .item b {
+        font-weight: 600;
+      }
+      footer {
+        margin-top: 42px;
+        color: var(--muted);
+        text-align: center;
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .grid.cols-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        border-radius: 12px;
+        border: 1px solid #222b36;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      .gallery .caption {
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="brand">
+          <div class="avatar">DD</div>
+          <div>
+            <div style="font-weight: 700">Desta Dwinanda</div>
+            <div style="font-size: 12px; color: var(--muted)">
+              Aeronautical Engineering · UAV · Aerostructures · Composites
+            </div>
+          </div>
+        </div>
+        <nav>
+          <a href="#about" class="active">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#analysis">Analysis</a>
+          <a href="#design">Design</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="card">
+          <span class="pill">Final‑year · Expected graduation Oct 2025</span>
+          <h1>
+            Hi, I’m Desta Dwinanda
+          </h1>
+          <p class="lead">Fresh graduate in aeronautical engineering with strong passions for conceptual design,UAV design, aerostructures, and composites. Experience in conducting
+research with BRIN on hybrid composite (empty oil palm bunch waste fiber + E-Glass +
+Active carbon) and designing UAV conceptual models using industry standard tools
+(Solidworks, MSC PATRAN and NASTRAN, ANSYS).</p>
+          </p>
+          <div class="btns">
+            <a class="btn primary" href="#contact">Contact Me</a>
+            <a class="btn" href="mailto:destadwinanda2@gmail.com">Email</a>
+            <a
+              class="btn"
+              href="https://linkedin.com/in/destadwinanda"
+              target="_blank"
+              rel="noreferrer"
+              >LinkedIn</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <h2 id="about">Snapshot</h2>
+          <div class="kvs">
+            <div class="kv">
+              <div class="big">UAV BRAVO</div>
+              <div class="sub">Hybrid composite STOL UAV (lead)</div>
+            </div>
+            <div class="kv">
+              <div class="big">BRIN</div>
+              <div class="sub">Research — TKKS/E‑glass composites</div>
+            </div>
+            <div class="kv">
+              <div class="big">MSTech</div>
+              <div class="sub">B737 & F‑27 maintenance intern</div>
+            </div>
+          </div>
+          <div style="margin-top: 10px">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">MSC Patran/Nastran</span>
+            <span class="tag">ANSYS</span>
+            <span class="tag">Composite Manufacturing</span>
+            <span class="tag">Aerodynamics</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="grid cols-2">
+          <div class="card item">
+            <div class="meta">Feb 2025 – Dec 2025 · Bandung</div>
+            <b
+              >Research Intern — BRIN (National Research and Innovation
+              Agency)</b
+            >
+            <div>
+              • Conducted tensile, shear, and compression tests on TKKS-E‑glass-activated‑carbon composites. 
+              <br />
+              • Conceptual Design, Aerodynamics, Aircraft Structure especially for wing, Composite manufacturing.
+              <br />
+              • Led structural workstream for the 5 kg‑class STOL UAV BRAVO.
+            </div>
+          </div>
+          <div class="card item">
+            <div class="meta">Sep 2024 – Oct 2024 · Bandung</div>
+            <b>Intern — PT Mulya Sejahtera Technology (MSTech)</b>
+            <div>
+              • Assisted maintenance tasks on Boeing 737 Classic & Fokker F‑27.
+              <br />• Performed remove/installation (ignition exciter,
+              propeller), safety wire twisting, documentation. <br />• Learned
+              sheet‑metal & composite repair basics.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid cols-2">
+          <div class="card item">
+            <div class="meta">Lead · 2025</div>
+            <b>UAV BRAVO — STOL UAV</b>
+            <div>
+              leader of 4 person team to design, build, test flight and anti-radar for UAV BRAVO.
+            </div>
+          </div>
+          <div class="card item">
+            <div class="meta">Thesis · 2025</div>
+            <b>Static Analysis of Wing Structure</b>
+            <div>
+             Static analysis of the wing structure of the stol-uav bravo made from a hybrid composite of oil palm empty fruit fruit-e-glass with activated carbon nanopiller
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="analysis">
+        <h2>Structural Analysis Results</h2>
+        <div class="gallery">
+          <div>
+            <img src="Critical Stress.png" alt="Critical Stress Plot" />
+            <div class="caption">
+              Critical Stress (von Mises) — identifying high-stress regions on
+              UAV wing structure.
+            </div>
+          </div>
+          <div>
+            <img src="Failure Index.png" alt="Failure Index Plot" />
+            <div class="caption">
+              Failure Index (Hill Criterion) — evaluating composite layup safety
+              margins.
+            </div>
+          </div>
+          <div>
+            <img src="Deformation.png" alt="Deformation Plot" />
+            <div class="caption">
+              Deformation (Translational) — displacement visualization under
+              load case.
+            </div>
+          </div>
+          <div>
+            <img src="Mass Property.png" alt="Mass Property Table" />
+            <div class="caption">
+              Mass Properties — CG, mass, volume, and principal inertia values
+              of UAV component.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="design">
+        <h2>Conceptual Design — UAV BRAVO</h2>
+        <div class="gallery">
+          <div>
+            <img
+              src="Screenshot 2025-09-25 072344.png"
+              alt="UAV BRAVO 3D Model"
+            />
+            <div class="caption">
+              3D SolidWorks model of UAV BRAVO — high wing, pusher prop, V-tail
+              configuration.
+            </div>
+          </div>
+          <div>
+            <img
+              src="Screenshot 2025-09-25 102418.png"
+              alt="UAV BRAVO Dimensions Side View"
+            />
+            <div class="caption">
+              Side view with dimensions — fuselage length, tail arm, and overall
+              proportions.
+            </div>
+          </div>
+          <div>
+            <img
+              src="Screenshot 2025-09-25 102430.png"
+              alt="UAV BRAVO Dimensions Top View"
+            />
+            <div class="caption">
+              Top view with dimensions — wingspan, tail span, and chord lengths.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills</h2>
+        <div class="card">
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, minmax(0, 1fr));
+              gap: 10px;
+            "
+          >
+            <div>
+              <b>Software</b>
+              <div class="muted">
+                - SolidWorks <br>- MSC Patran/Nastran <br>- ANSYS</div>
+            </div>
+            <div>
+              <b>Technical</b>
+              <div class="muted">
+                - Aerostructures <br>- Composite Manufacturing <br>- Aerodynamics<br>- UAV Design
+              </div>
+            </div>
+            <div>
+              <b>Languages</b>
+              <div class="muted">
+               - Indonesian (Native) <br>- English (Intermediate) <br>- German (Basic)
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="Portofolio">
+  <h2>Portofolio</h2>
+  <div class="card">
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        text-align: center;
+      "
+    >
+      <!-- Software -->
+      <div>
+        <img src="build composite material.jpg" alt="Build" style="width:100%; border-radius:8px;" />
+        <b>Build Composite Material</b>
+        <div class="muted">Build a composite material used TKKS, E-glass and actived carbon</div>
+      </div>
+
+      <!-- Technical -->
+      <div>
+        <img src="Safety wire flight control Boeing 737.jpg" alt="Technical" style="width:100%; border-radius:8px;" />
+        <b>Safety Wire Flight Control Boeing 737</b>
+        <div class="muted">
+          assist technicians to make safety wire flight control for Boeing 737
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+          <div>
+            Email:
+            <a href="mailto:destadwinanda2@gmail.com"
+              >destadwinanda2@gmail.com</a
+            >
+            · Phone: <a href="tel:+6282295576108">+62 822 9557 6108</a> ·
+            LinkedIn:
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://linkedin.com/in/destadwinanda"
+              >/in/destadwinanda</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <footer>© <span id="y"></span> Desta Dwinanda</footer>
+    </div>
+    <script>
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
