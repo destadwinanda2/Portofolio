@@ -247,3 +247,19 @@
     grid-template-columns: 1fr;
   }
 }
+
+html {
+    scroll-behavior: smooth;
+  }
+  .navbar a {
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .navbar a:hover {
+    background: rgba(0,0,0,0.08);
+  }
+  .navbar a.active {
+    background: rgba(0,0,0,0.15);
+    font-weight: 600;
+  }
